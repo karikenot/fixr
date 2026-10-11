@@ -8,6 +8,14 @@ use Illuminate\Support\Facades\Auth;
 
 class TicketController extends Controller
 {
+
+    //memunculkan tiket atau indexingf atau anu itu
+    public function index() {
+        $tickets = Ticket::latest()->get();
+
+        return view('tickets.index', compact('tickets'));
+    }
+
     //halo kontoler
     public function create() {
         return view('tickets.create');
